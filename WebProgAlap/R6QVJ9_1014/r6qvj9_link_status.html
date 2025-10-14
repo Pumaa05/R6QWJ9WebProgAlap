@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS –kijelölés állapot alapján</title>
+
+    <style>
+        body {background-color: lightgrey;}
+
+        #para1 {
+            text align:left: ;
+            color:rgb(108,77,204);
+            font size: 18pt;
+            text align:jusify;
+        }
+
+        a:link {color: red;}
+        a:visited{color: grey;}
+        a:hover{color: yellow;}
+        a:active{color: red;}
+
+    </style>
+</head>
+<body>
+    <h1>CSS –kijelölés állapot alapján kijelölés-hivatkozás</h1>
+    
+    <div style="width:600px">
+
+    <p id="para1">Ha még nem látogattuk meg korábban a hivatkozott weboldalt,akkor az alábbi hivatkozás zöld betüszinnel jelenik meg,egyébként pedig szürke szinel.Ha a hivatkozás fölé visszük a kurzort,akkor a szin sárgára vált,ha pedig a hivatkozásra kattintunk akkor pirosra</p>
+   
+    <p id="para1"><a href="https://www.unithe.hu" target="_blank">Kattnts ide <i>unithe.hu</i>weblap megnzitasahoz</a></p>
+
+</div>
+
+</body>
+</html>

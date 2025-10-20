@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Táblázat készítése, formázása</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: white;
+    }
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        width: 60%;
+        border: 2px solid black;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #ddd;
+        font-weight: bold;
+    }
+
+    /* 1. sor – piros */
+    .row1 td {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+    }
+
+    /* 2. sor – világossárga */
+    .row2 td {
+        background-color: #ffff99;
+        font-weight: bold;
+    }
+
+    /* 2. sor 2. cella – sötétebb sárga */
+    .row2 td:nth-child(2) {
+        background-color: #ffff66;
+    }
+
+    /* 3. sor – világossárga */
+    .row3 td {
+        background-color: #ffff99;
+        font-weight: bold;
+    }
+
+    textarea {
+        width: 100%;
+        height: 60px;
+        resize: none;
+        font-weight: normal;
+    }
+</style>
+</head>
+<body>
+
+<h1>Táblázat készítése, formázása</h1>
+<h2>Táblázat elemei</h2>
+
+<table>
+    <tr>
+        <th>1. oszlop fejléce</th>
+        <th>2. oszlop fejléce</th>
+        <th>3. oszlop fejléce</th>
+    </tr>
+    <tr class="row1">
+        <td>1. sor 1. elem</td>
+        <td>1. sor 2. elem</td>
+        <td>1. sor 3. elem</td>
+    </tr>
+    <tr class="row2">
+        <td>2. sor 1. elem</td>
+        <td>
+            2. sor 2. elem<br>
+            <textarea readonly>Az ember ősidők óta használ különböző eszközöket, ha...</textarea>
+        </td>
+        <td>2. sor 3. elem</td>
+    </tr>
+    <tr class="row3">
+        <td>3. sor 1. elem</td>
+        <td>3. sor 2. elem</td>
+        <td>3. sor 3. elem</td>
+    </tr>
+</table>
+
+</body>
+</html>

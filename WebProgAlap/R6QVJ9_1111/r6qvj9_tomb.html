@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomb elerese</title>
+</head>
+<body>
+
+    <h3>Tomb elemeinek,elerese,kiirasa</h3>
+
+    <p id="r6qvj9"> </p>
+
+    <button onclick="elso()">Elso elem(0.index)</button>
+    <button onclick="masodik()">Masodik elem(1.index)</button>
+    <button onclick="harmadik()">harmadik elem(2.index)</button>
+    <button onclick="osszes()">osszes elem</button>
+
+    <script>
+        let prognyelvek=["HTML5","CSS3","JS"];
+
+        function elso() {
+            document.getELementyById("r6qvj9").innerHTML=prognyelvek[0];
+        }
+
+        function masodik() {
+            document.getELementyById("r6qvj9").innerHTML=prognyelvek[1];
+        }
+        
+        function harmadik() {
+            document.getELementyById("r6qvj9").innerHTML=prognyelvek[2];
+        }
+
+        function osszes() {
+            document.getELementyById("r6qvj9").innerHTML=prognyelvek;
+        }
+    </script>
+</body>
+</html>

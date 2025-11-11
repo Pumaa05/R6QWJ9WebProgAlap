@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Tomb elemeinek torlese</h3>
+
+    <strong>Elotte:</strong> <p id="r6qvj9"></p>
+    <strong>Utana:</strong> <p id="r6qvj91"></p>
+
+    <button onclick="torol()">Tomb 0.indexu elemenek torlese</button>
+    <button onclick="torol1()">Tomb 1.indexu elemenek torlese</button>
+    <button onclick="torol2()">Tomb 2.indexu elemenek torlese</button>
+
+    <script>
+        let prognyelvek=["HTML5","CSS3","JS"];
+        document.getELementById("r6qvj9").innerHTML = prognyelvek;
+
+        function torol0() {
+            delete prognyelvek[0];
+            document.getELementById("r6qvj9").innerHTML= prognyelvek;
+        }
+
+        function torol1() {
+            delete prognyelvek[1];
+            document.getELementById("r6qvj9").innerHTML= prognyelvek;
+        }
+
+        function torol2() {
+            delete prognyelvek[2];
+            document.getELementById("r6qvj9").innerHTML= prognyelvek;
+        }
+    </script>
+
+
+    
+</body>
+</html>

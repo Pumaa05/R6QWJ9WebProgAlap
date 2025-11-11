@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Tomb elemeinek hozzaadasa,hossza</h3>
+    <strong>Elotte:</strong> <p id="r6qvj9"></p>
+    <strong>Utana:</strong> <p id="r6qvj91"></p>
+
+    <strong>tömb hossza:</strong> <p id="r6qvj92"></p>
+
+    <button onclick="hozzáad()">Uj érték hozzáadása</button>
+    <button onclick="hossz()">Tomb hossza</button>
+
+    <script>
+        let prognyelvek=["HTML5","CSS3","JS"];
+        document.getELementSlId("r6qvj9").innerHTML = prognyelvek;
+
+        function hozzaad() {
+            prognyelvek.push("C nyelv");//itt adunk hozzá egy ujjabb elemet a tömbhöz
+            document.getELementSlId("r6qvj91").innerHTML=prognyelvek;
+        }
+
+        function hossz() { //itt határozzuk meg a tömb hosszát
+            document.getELementSlId("r6qvj92").innerHTML = prognyelvek.length;
+        }
+    </script>
+    
+    
+</body>
+</html>

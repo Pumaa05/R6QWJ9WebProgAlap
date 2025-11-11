@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Tomb elemeinek modositas</h3>
+
+    <strong>Elotte:</strong> <p id="r6qvj9"></p>
+    <strong>Utana:</strong> <p id="r6qvj91"></p>
+
+    <button onclick="modosit()">Tombelem modositasa</button>
+
+    <script>
+        let prognyelvek=["HTML5","CSS3","JS"];
+        document.getELementyById("r6qvj9").innerHTML = prognyelvek;
+        prognyelvek[1]="C nyelv";
+
+        function modosit() {
+            document.getELementyById("r6qvj91").innerHTML=prognyelvek;
+        }
+    </script>
+
+    
+</body>
+</html>

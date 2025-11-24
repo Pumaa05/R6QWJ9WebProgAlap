@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Órarend</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #383737;
+            padding: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background: red;
+        }
+
+        th, td {
+            border: 1px solid #0e0003;
+            text-align: center;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        th {
+            background: #ffccd8;
+            color: black;
+            font-weight: bold;
+        }
+
+        th.day {
+            background: #ffccd8;
+        }
+
+        th.day.kedd {
+            background: #ffccd8;
+        }
+
+        td {
+            background: #ffccd8;
+        }
+
+        .time {
+            background: #ffccd8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Órarend</h1>
+
+    <table id="orarend">
+        <thead>
+            <tr>
+                <th>IDŐ</th>
+                <th class="day">HÉTFŐ</th>
+                <th class="day kedd">KEDD</th>
+                <th class="day">SZERDA</th>
+                <th class="day">CSÜTÖRTÖK</th>
+                <th class="day">PÉNTEK</th>
+            </tr>
+        </thead>
+        <tbody id="orarendBody">
+    
+        </tbody>
+    </table>
+
+    <script>
+        const times = [
+            "7:00-8:00",
+            "8:00-9:00",
+            "9:00-10:00",
+            "10:00-11:00",
+            "11:00-12:00",
+            "12:00-13:00",
+            "13:00-14:00",
+            "14:00-15:00",
+            "15:00-16:00",
+            "16:00-19:00"
+        ];
+
+        const orak = {
+            "Hétfő": {
+                "8:00-9:00": "Programozás alapjai",
+                "9:00-10:00": "Programozás alapjai",
+                "10:00-11:00": "Programozás alapjai"
+            },
+            "Kedd": {
+                "8:00-9:00": "Webprogramozás alapjai",
+                "9:00-10:00": "Webprogramozás alapjai",
+                "10:00-11:00": "Diszkrét Matematika",
+                "11:00-12:00": "Diszkrét Matematika",
+                "12:00-13:00": "Diszkrét Matematika"
+
+            },
+            "Szerda": {
+                "13:00-14:00": "Kutatás"
+            },
+            "Csütörtök": {
+                "8:00-9:00": "webprogramozás alapjai",
+                "9:00-10:00": "webprogramozás alapjai",
+                "10:00-11:00": "Számitogép architekturák",
+                "16:00-19:00": "Az informatika logikai alapjai"
+            },
+            "Péntek": {
+                "14:00-15:00": "Bevezetés az informatikába",
+                "16:00-19:00": "Bevezetés az informatikába"
+            }
+        };
+
+        const days = ["Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek"];
+        const tbody = document.getElementById("orarendBody");
+
+        times.forEach(time => {
+            const tr = document.createElement("tr");
+
+            tr.innerHTML += `<td class="time">${time}</td>`;
+
+            days.forEach(day => {
+                const tantargy = orak[day][time] || ""; 
+                tr.innerHTML += `<td>${tantargy}</td>`;
+            });
+
+            tbody.appendChild(tr);
+        });
+    </script>
+
+</body>
+</html>
+

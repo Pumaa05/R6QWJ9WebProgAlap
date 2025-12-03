@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="jsonr6qvj9">
+
+    </div>
+    <script>
+        const SLOBJ = {
+            "name":"Szabo Levente",
+            "age":20,
+            "cars": [
+                {"name": "Toyota", "models":["CHR", "corolla", "Proace"]},
+                {"name": "Ford", "models":["kuga", "mondeo", "mustang"]},
+                {"name": "BMW", "models":["320", "x3", "x5"]},
+                {"name": "Fiat", "models":["500", "panda", "tipo"]}
+            ]
+        }
+
+        const jsonr6qvj9 = document.getElementById('jsonr6qvj9');
+
+        const h2 = document.createElement("h2"):
+        h2.innerHTML = '<span><b>${SLOBJ["name"]}</b></span> (${SLOBJ["age"]})';
+
+        jsonr6qvj9.appendChild(h2);
+
+        for(let i=0; i<SLOBJ["cars"].length; i++) {
+            const h3 = docuemnt.createElement('h3');
+            h3.innerHTML = '<span><b>${SLOBJ['cars'][i]["name"]}</b></span>:';
+            jsonNeptunkod.appendChild(h3);
+
+            const ul= document.createElement('ul');
+            jsonr6qvj9.appendChild(ul):
+
+        }
+    </script>
+    
+</body>
+</html>

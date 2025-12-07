@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Regisztráció</title>
+<style>
+body{background:black;color:white;font-family:Arial;margin:0;text-align:center;}
+header{background:#111;padding:20px;border-bottom:3px solid red;position:relative;}
+form{background:#1a1a1a;padding:20px;width:60%;margin:40px auto;border-radius:10px;border:3px solid white;}
+input{width:80%;padding:12px;margin:10px;border-radius:5px;border:2px solid white;background:#000;color:white;}
+button{padding:12px 25px;background:red;color:white;border:none;border-radius:5px;cursor:pointer;margin-top:10px;font-size:16px;}
+button:hover{background:darkred;}
+a.button{display:inline-block;margin-top:20px;padding:10px 20px;background:red;color:white;text-decoration:none;border-radius:5px;}
+</style>
+<script>
+function regisztral(){
+let user = document.getElementById('user').value;
+let pass = document.getElementById('pass').value;
+if(user.trim()==="" || pass.trim()===""){
+alert('Tölts ki minden mezőt!');
+return false;
+}
+localStorage.setItem('loggedUser', user);
+alert('Sikeres regisztráció! Be vagy jelentkezve.');
+window.location.href='index.html';
+return false;
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Regisztráció</h1>
+</header>
+<form onsubmit="return regisztral();">
+<h2>Add meg adataid</h2>
+<input id="user" type="text" placeholder="Felhasználónév" required>
+<input id="pass" type="password" placeholder="Jelszó" required>
+<button type="submit">Regisztráció</button>
+</form>
+<a class="button" href="index.html">Vissza a főoldalra</a>
+</body>
+</html>

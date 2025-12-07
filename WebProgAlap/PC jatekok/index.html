@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>BestPCgames – Főoldal</title>
+
+<style>
+body{
+    background:black url('https://wallpapercave.com/wp/wp2674788.jpg') no-repeat center center fixed;
+    background-size:cover;
+    color:white;
+    font-family:Arial;
+    margin:0;
+    text-align:center;
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:url('https://wallpapercave.com/wp/wp9119137.jpg') center/cover no-repeat;
+    padding:40px 20px;
+    border-bottom:4px solid red;
+    box-shadow:0 0 25px black;
+}
+
+.logo{
+    font-size:48px;
+    font-weight:bold;
+    text-shadow:0 0 15px #ff0000;
+}
+
+
+nav a{
+    color:white;
+    margin:0 15px;
+    text-decoration:none;
+    font-size:20px;
+    text-shadow:0 0 10px black;
+}
+
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+.dropbtn{
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    font-size:20px;
+    cursor:pointer;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:rgba(0,0,0,0.85);
+    min-width:150px;
+    border:2px solid red;
+    z-index:10;
+}
+.dropdown-content a{
+    color:white;
+    padding:10px;
+    display:block;
+    text-decoration:none;
+}
+.dropdown-content a:hover{background:#444;}
+.dropdown:hover .dropdown-content{display:block;}
+
+
+#userStatus{
+    background:rgba(0,0,0,0.6);
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:18px;
+    text-shadow:0 0 10px black;
+}
+#userStatus button{
+    background:red;
+    color:white;
+    border:none;
+    padding:6px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+
+.game-box{
+    backdrop-filter:blur(6px);
+    background:rgba(0,0,0,0.55);
+    border:3px solid white;
+    width:60%;
+    margin:30px auto;
+    padding:20px;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 0 15px #000;
+    transition:0.3s;
+}
+.game-box:hover{
+    background:rgba(0,0,0,0.75);
+    transform:scale(1.02);
+}
+
+img.game-img{
+    width:300px;
+    border-radius:5px;
+}
+
+</style>
+
+
+<script>
+window.onload = function(){
+    let u = localStorage.getItem("loggedUser");
+    let box = document.getElementById("userStatus");
+
+    if(u){
+        box.innerHTML = "Bejelentkezve: <b>"+u+
+        "</b> <button onclick='logout()'>Kijelentkezés</button>";
+    } else {
+        box.innerHTML = "<a href='login.html' style='color:white;'>Bejelentkezés</a> | " +
+                        "<a href='register.html' style='color:white;'>Regisztráció</a>";
+    }
+};
+
+function logout(){
+    localStorage.removeItem("loggedUser");
+    location.reload();
+}
+</script>
+
+</head>
+<body>
+    
+
+
+<header>
+    <div class="logo">BestPCgames</div>
+
+    <nav class="menu">
+        <a href="index.html">Főoldal</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">Játékok ▼</button>
+            <div class="dropdown-content">
+                <a href="gta5.html">GTA 5</a>
+                <a href="ets2.html">Euro Truck Simulator 2</a>
+                <a href="fortnite.html">Fortnite</a>
+            </div>
+        </div>
+
+        
+        <a href="./kapcsolat.html">Kapcsolat</a>
+
+    </nav>
+
+    <div id="userStatus"></div>
+</header>
+
+<h1 style="margin-top:40px; text-shadow:0 0 10px black;">Válassz egy játékot!</h1>
+
+<div class="game-list" style="margin-top:50px; display:flex; flex-direction:column; gap:25px;">
+
+    <div class="game-box" onclick="location.href='gta5.html'">
+        <img class="game-img" src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg">
+        <h2>GTA 5</h2>
+    </div>
+
+    <div class="game-box" onclick="location.href='ets2.html'">
+        <img class="game-img" src="https://cdn.akamai.steamstatic.com/steam/apps/227300/header.jpg">
+        <h2>Euro Truck Simulator 2</h2>
+    </div>
+
+    <div class="game-box" onclick="location.href='fortnite.html'">
+    <img class="game-img" src="images/fortintjtii.jpg">
+    <h2>Fortnite</h2>
+</div>
+
+</div>
+
+    </div>
+
+    <h2 style="margin-top:60px; text-shadow:0 0 15px #b347ff;">Játékok összehasonlítása</h2>
+
+<table style="
+    width:80%;
+    margin:30px auto;
+    border-collapse:collapse;
+    font-size:20px;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(4px);
+    border:3px solid #b347ff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0 20px #8e2fff;">
+    
+    <tr style="background:rgba(179,71,255,0.5); color:white; text-shadow:0 0 5px #000;">
+        <th style="padding:15px; border:1px solid #b347ff;">Játék</th>
+        <th style="padding:15px; border:1px solid #b347ff;">Műfaj</th>
+        <th style="padding:15px; border:1px solid #b347ff;">Kiadás éve</th>
+        <th style="padding:15px; border:1px solid #b347ff;">Nehézség</th>
+    </tr>
+
+    <tr>
+        <td style="padding:12px; border:1px solid #b347ff;">GTA 5</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Akció, Open World</td>
+        <td style="padding:12px; border:1px solid #b347ff;">2013</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Közepes</td>
+    </tr>
+
+    <tr>
+        <td style="padding:12px; border:1px solid #b347ff;">Euro Truck Simulator 2</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Szimulátor</td>
+        <td style="padding:12px; border:1px solid #b347ff;">2012</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Könnyű</td>
+    </tr>
+
+    <tr>
+        <td style="padding:12px; border:1px solid #b347ff;">Fortnite</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Battle Royale</td>
+        <td style="padding:12px; border:1px solid #b347ff;">2017</td>
+        <td style="padding:12px; border:1px solid #b347ff;">Nehéz</td>
+    </tr>
+
+</table>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+
+
+
+
